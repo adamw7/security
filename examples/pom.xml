@@ -10,10 +10,8 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <artifactId>security</artifactId>  
     <version>1.0</version>  
   </parent>
-  
-  <groupId>io.github.adamw7</groupId>  
+   
   <artifactId>security.examples</artifactId>  
-  <version>1.0</version>  
   <packaging>jar</packaging>  
   
   <name>Security examples</name>  

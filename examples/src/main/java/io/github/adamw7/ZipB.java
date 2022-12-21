@@ -13,6 +13,7 @@ public class ZipB {
 	}
 
 	private static void contruct(long len) throws IOException {
+		System.out.println("Starting construction of Zip Bomb containing: " + len + " bytes");
 		long start = System.currentTimeMillis();
 		File file = new File("b.zip");
 		file.delete();
@@ -26,7 +27,7 @@ public class ZipB {
 			}
 		}
 
-		System.out.println("Zip entry contains: " + len + " bytes");
+		System.out.println("Zip file size: " +  file.length() + " bytes");
 		System.out.println("Took " + (System.currentTimeMillis() - start)/1000 + " secs");
 	}
 
