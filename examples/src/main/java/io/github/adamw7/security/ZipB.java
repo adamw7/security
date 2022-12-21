@@ -1,4 +1,4 @@
-package io.github.adamw7;
+package io.github.adamw7.security;
 
 import java.io.File;
 import java.io.FileOutputStream;
