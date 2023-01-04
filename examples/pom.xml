@@ -17,11 +17,6 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <name>Security examples</name>  
   <url>http://maven.apache.org</url>  
   
-  <properties>
-    <maven.compiler.source>16</maven.compiler.source>
-    <maven.compiler.target>16</maven.compiler.target>
-  </properties>
-  
 	<build>
 		<plugins>
 			<plugin>
