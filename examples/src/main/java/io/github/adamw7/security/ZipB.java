@@ -12,7 +12,7 @@ public class ZipB {
 		contruct(100000000L);
 	}
 
-	private static void contruct(long len) throws IOException {
+	public static void contruct(long len) throws IOException {
 		System.out.println("Starting construction of Zip Bomb containing: " + len + " bytes");
 		long start = System.currentTimeMillis();
 		File file = new File("b.zip");
