@@ -9,10 +9,11 @@ import java.util.zip.ZipOutputStream;
 public class ZipB {
 
 	public static void main(String[] args) throws IOException {
-		contruct(100000000L);
+		construct(100000000L);
 	}
 
-	public static void contruct(long len) throws IOException {
+	public static void construct(long len) throws IOException {
+		check(len);
 		System.out.println("Starting construction of Zip Bomb containing: " + len + " bytes");
 		long start = System.currentTimeMillis();
 		File file = new File("b.zip");
@@ -29,6 +30,12 @@ public class ZipB {
 
 		System.out.println("Zip file size: " +  file.length() + " bytes");
 		System.out.println("Took " + (System.currentTimeMillis() - start)/1000 + " secs");
+	}
+
+	private static void check(long len) {
+		if (len <= 0) {
+			throw new IllegalArgumentException("Invalid length: " + len);
+		}
 	}
 
 	private static byte[] createBatch() {
