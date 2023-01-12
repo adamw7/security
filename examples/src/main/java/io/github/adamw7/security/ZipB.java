@@ -6,7 +6,12 @@ import java.io.IOException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class ZipB {
+	
+	private final static Logger log = LogManager.getLogger(ZipB.class.getName());
 
 	public static void main(String[] args) throws IOException {
 		construct(100000000L);
@@ -14,7 +19,7 @@ public class ZipB {
 
 	public static void construct(long len) throws IOException {
 		check(len);
-		System.out.println("Starting construction of Zip Bomb containing: " + len + " bytes");
+		log.info("Starting construction of Zip Bomb containing: " + len + " bytes");
 		long start = System.currentTimeMillis();
 		File file = new File("b.zip");
 		file.delete();
@@ -28,8 +33,8 @@ public class ZipB {
 			}
 		}
 
-		System.out.println("Zip file size: " +  file.length() + " bytes");
-		System.out.println("Took " + (System.currentTimeMillis() - start)/1000 + " secs");
+		log.info("Zip file size: " +  file.length() + " bytes");
+		log.info("Took " + (System.currentTimeMillis() - start)/1000 + " secs");
 	}
 
 	private static void check(long len) {
