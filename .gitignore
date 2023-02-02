@@ -13,3 +13,5 @@ examples/.settings
 
 .project
 .classpath
+
+.idea/
