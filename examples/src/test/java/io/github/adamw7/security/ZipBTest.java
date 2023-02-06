@@ -30,7 +30,7 @@ public class ZipBTest {
 	
 	@ParameterizedTest
 	@ValueSource(ints = {0, -1, -99999999})
-	public void nagitiveInvalidLength(int len) {
+	public void negativeInvalidLength(int len) {
 		IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> {
 			ZipB.construct(len);
 		}, "Expected construct method to throw, but it didn't");
