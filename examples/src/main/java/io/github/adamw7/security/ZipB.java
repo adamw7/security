@@ -19,7 +19,7 @@ public class ZipB {
 
 	public static void construct(long len) throws IOException {
 		check(len);
-		log.info("Starting construction of Zip Bomb containing: " + len + " bytes");
+		log.info("Starting construction of Zip Bomb containing: {} bytes", len);
 		long start = System.currentTimeMillis();
 		File file = new File("b.zip");
 		file.delete();
@@ -33,8 +33,8 @@ public class ZipB {
 			}
 		}
 
-		log.info("Zip file size: " +  file.length() + " bytes");
-		log.info("Took " + (System.currentTimeMillis() - start)/1000 + " secs");
+		log.info("Zip file size: {} bytes", file::length);
+		log.info("Took {} secs", () -> (System.currentTimeMillis() - start)/1000);
 	}
 
 	private static void check(long len) {
