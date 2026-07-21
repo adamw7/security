@@ -1,9 +1,5 @@
 # CLAUDE.md
 
-See [AGENTS.md](AGENTS.md) for the full agent guide. AGENTS.md is the single
-source of truth; this file is a quick-reference summary of the essentials. When
-the two disagree, AGENTS.md wins.
-
 ## Project
 
 Java project built with Maven 3.9.X. Run `mvn install` from the root to build.
