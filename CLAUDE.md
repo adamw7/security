@@ -1,8 +1,27 @@
 # CLAUDE.md
 
+See [AGENTS.md](AGENTS.md) for the companion agent guide.
+
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
 ## Project
 
-Java project built with Maven 3.9.X. Run `mvn install` from the root to build.
+Java project built with Maven 3.9.X: a collection of small, self-contained security-related examples (e.g. zip bomb construction). Run `mvn install` from the root to build.
+
+## Commands
+
+- Build (root): `mvn install`
+- Run all tests: `mvn test`
+- Run a single test class: `mvn test -pl examples -Dtest=ZipBTest`
+- Run a single test method: `mvn test -pl examples -Dtest=ZipBTest#happyPath`
+
+## Architecture
+
+- Multi-module Maven reactor: the root `pom.xml` (`packaging=pom`) declares only `dependencyManagement`/`pluginManagement`; the `examples` module (artifact `security.examples`) is currently the only module and must not declare its own dependency versions or plugin versions — those come from the root only, per the Maven rule below.
+- Base package for all example code: `io.github.adamw7.security`.
+- Each security example is a standalone, runnable class with a `main` method (e.g. `ZipB`), paired with a unit test class of the same name + `Test` suffix in `src/test/java` under the same package.
+- Logging is via Log4j2, configured in `examples/src/main/resources/log4j2.properties`.
 
 ## Java version
 Java 25.
