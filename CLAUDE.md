@@ -1,5 +1,8 @@
 # CLAUDE.md
 
+See [AGENTS.md](AGENTS.md) for the companion agent guide.
+
+
 ## Project
 
 Java project built with Maven 3.9.X. Run `mvn install` from the root to build.
